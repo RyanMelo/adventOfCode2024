@@ -9,19 +9,19 @@ fun main() {
 }
 
 fun day1(lines: List<String>) {
-    val fistList: MutableList<String> = mutableListOf();
-    val secondList: MutableList<String> = mutableListOf();
+    val fistList: MutableList<Int> = mutableListOf();
+    val secondList: MutableList<Int> = mutableListOf();
 
     val resultDifs: MutableList<Int> = mutableListOf();
 
     lines.map { it.split("   ") }.map { line ->
         line.mapIndexed { index, value ->
             if (index == 0) {
-                fistList.add(value)
+                fistList.add(value.toInt())
             }
 
             if (index == 1) {
-                secondList.add(value)
+                secondList.add(value.toInt())
             }
         }
     }
@@ -31,7 +31,7 @@ fun day1(lines: List<String>) {
 
     var diff = 0
     for (i in fistList.indices) {
-        diff = fistList[i].toInt() - secondList[i].toInt()
+        diff = fistList[i] - secondList[i]
         if (diff < 0) {
             diff *= -1
         }
