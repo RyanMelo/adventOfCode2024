@@ -3,9 +3,12 @@ package org.example
 import java.io.File
 
 fun main() {
-    val file = "src/main/kotlin/input.txt"
-    val lines = File(file).readLines();
+    val lines = readFile("input.txt")
 
+    day1(lines)
+}
+
+fun day1(lines: List<String>) {
     val fistList: MutableList<String> = mutableListOf();
     val secondList: MutableList<String> = mutableListOf();
 
@@ -41,4 +44,10 @@ fun main() {
     println(secondList)
     println(resultDifs)
     println("Resultado da soma: $result")
+}
+
+fun readFile(file: String): List<String> {
+    val filePath = "src/main/resources/$file"
+    val lines = File(filePath).readLines();
+    return lines
 }
