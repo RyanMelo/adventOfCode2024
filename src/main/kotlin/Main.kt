@@ -9,10 +9,10 @@ fun main() {
 }
 
 fun day1(lines: List<String>) {
-    val fistList: MutableList<Int> = mutableListOf();
-    val secondList: MutableList<Int> = mutableListOf();
+    val fistList: MutableList<Int> = mutableListOf()
+    val secondList: MutableList<Int> = mutableListOf()
 
-    val resultDifs: MutableList<Int> = mutableListOf();
+    val resultDifs: MutableList<Int> = mutableListOf()
 
     lines.map { it.split("   ") }.map { line ->
         line.mapIndexed { index, value ->
@@ -29,7 +29,7 @@ fun day1(lines: List<String>) {
     fistList.sort()
     secondList.sort()
 
-    var diff = 0
+    var diff: Int
     for (i in fistList.indices) {
         diff = fistList[i] - secondList[i]
         if (diff < 0) {
@@ -38,7 +38,7 @@ fun day1(lines: List<String>) {
         resultDifs.add(diff)
     }
 
-    var result = resultDifs.sum()
+    val result = resultDifs.sum()
 
     println(fistList)
     println(secondList)
@@ -48,6 +48,6 @@ fun day1(lines: List<String>) {
 
 fun readFile(file: String): List<String> {
     val filePath = "src/main/resources/$file"
-    val lines = File(filePath).readLines();
+    val lines = File(filePath).readLines()
     return lines
 }
