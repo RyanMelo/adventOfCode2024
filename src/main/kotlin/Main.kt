@@ -3,10 +3,9 @@ package org.example
 import java.io.File
 
 fun main() {
-    val lines = readFile("input.txt")
-
-    day1(lines)
+    day1(readFile("input_day1.txt"))
 }
+
 
 fun day1(lines: List<String>) {
     val fistList: MutableList<Int> = mutableListOf()
